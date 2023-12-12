@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Varela+Round&display=swap");
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.px-10 {
+  padding: 10px;
+  padding: 10px;
+}
+.mxw-340 {
+  max-width: 340px;
+}
+
+.ff-varela {
+  font-family: "Varela Round", sans-serif;
+}
+
+.sosmed img {
+  width: 40px;
+}
+@media only screen and (min-width: 400px) {
+  .max-window {
+    max-width: 400px;
+  }
+}
