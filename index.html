@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="rengga.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
-  <body class="bgc-success-l">
-    <div class="flex jstfy-center full-w">
+  <body class="pos-rel">
+    <div class="bg image bgc-success-l full-w h100vh"></div>
+    <div class="bg bgc-success-l full-w h100vh"></div>
+    <div class="popup h100vh full-w pos-abs" style="display: none">
+      <img alt="" class="h100vh full-w" />
+    </div>
+    <div class="flex jstfy-center full-w main pos-abs">
       <div class="se1 bgc-success-d full-w max-window t-center px-10 py-20">
         <div class="flex jstfy-center full-w mb-40">
-          <div class="w-96 h-96 bgc-contrast-d rounded-2xl"></div>
+          <img src="" class="w-96 h-96 bgc-contrast-d rounded-2xl top-image" loading="lazy" />
         </div>
         <span class="text-title text-7xl text-white ff-varela">ngidolMaki</span>
         <div class="sosmed mt-40 mb-20 flex jstfy-evenly">
@@ -24,15 +35,62 @@
           <div class="garis w70 border-solid border-2 border-white h-1 rounded"></div>
         </div>
         <div class="flex full-w jstfy-center mt-20">
-          <div class="p-2 mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw-340">
-            <div class="w-64 h-64 bgc-contrast-d rounded-2xl"></div>
-            <div class="w-64 h-64 bgc-contrast-d rounded-2xl"></div>
-            <div class="w-64 h-64 bgc-contrast-d rounded-2xl"></div>
-            <div class="w-64 h-64 bgc-contrast-d rounded-2xl"></div>
-            <div class="w-64 h-64 bgc-contrast-d rounded-2xl"></div>
-          </div>
+          <div class="p-2 mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw-340 parent-list dnone-imortal"></div>
         </div>
       </div>
     </div>
   </body>
 </html>
+<script>
+  var json = {
+    1: {
+      full: "https://i.ibb.co/8mcs8JX/ssssskkkv2.jpg",
+      thumb: "https://i.ibb.co/Cw280qW/ssssskkkv2.jpg",
+    },
+    2: {
+      full: "https://i.ibb.co/7CrpKW0/ddff2.jpg",
+      thumb: "https://i.ibb.co/GpCMR2r/ddff2.jpg",
+    },
+    3: {
+      full: "https://i.ibb.co/yQVSnTJ/hjb-v1psd.jpg",
+      thumb: "https://i.ibb.co/mcS8Cs7/hjb-v1psd.jpg",
+    },
+    4: {
+      full: "https://i.ibb.co/Fw1wShp/kqng-2.jpg",
+      thumb: "https://i.ibb.co/Sngnh6S/kqng-2.jpg",
+    },
+  };
+
+  // var jsonKebalik = json.reverse();
+
+  let data = Object.keys(json);
+  let last = data[data.length - 1];
+  let dataLast = json[last];
+
+  let dataRevresed = Object.entries(json);
+  let reversed = [...dataRevresed].reverse();
+  let reversedObject = Object.fromEntries(reversed);
+
+  console.log(reversedObject);
+
+  $(".top-image").attr("src", dataLast.thumb);
+  $(".bg.image").css("background-image", `url('${dataLast.thumb}')`);
+
+  $.each(json, function (i, v) {
+    $(".parent-list").append(`
+      <img src="${v.thumb}" data-full="${v.full}" class="w-64 h-64 bgc-contrast-d rounded-2xl list-image" />
+    `);
+    $(".parent-list").removeClass("dnone-imortal");
+  });
+
+  $(document).on("click", ".list-image", function () {
+    let img = $(this).data("full");
+    $(".popup img").attr("src", img);
+    $(".popup").show();
+  });
+
+  $(document).on("click", ".popup", function () {
+    $(".popup").hide();
+    $(".popup img").attr("src", "");
+  });
+</script>

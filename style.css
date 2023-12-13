@@ -18,6 +18,36 @@
 .sosmed img {
   width: 40px;
 }
+
+body {
+}
+.bg {
+  /* z-index: 1; */
+  position: fixed;
+  opacity: 0.8;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  z-index: 2;
+  top: 0;
+}
+
+.popup {
+  z-index: 4;
+}
+
+.popup img {
+  object-fit: contain;
+}
+
+.dnone-imortal {
+  display: none !important;
+}
+
 @media only screen and (min-width: 400px) {
   .max-window {
     max-width: 400px;
