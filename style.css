@@ -69,7 +69,8 @@ body {
   display: none !important;
 }
 
-.list-image {
+.list-image,
+.top-image {
   outline: 3px solid white;
   outline-offset: -3px;
 }
