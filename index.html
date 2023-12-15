@@ -30,9 +30,9 @@
           </div>
           <span class="text-title text-7xl text-white ff-varela">ngidolMaki</span>
           <div class="sosmed mt-40 mb-20 flex jstfy-evenly">
-            <a href=""><img src="bahan/bxl-facebook.svg" alt="" /></a>
-            <a href=""><img src="bahan/bxl-instagram.svg" alt="" /></a>
-            <a href=""><img src="bahan/bxl-twitter.svg" alt="" /></a>
+            <a href="https://www.facebook.com/profile.php?id=100064009381592"><img src="bahan/bxl-facebook.svg" alt="" /></a>
+            <a href="https://www.instagram.com/ngidolmaki/"><img src="bahan/bxl-instagram.svg" alt="" /></a>
+            <a href="https://twitter.com/ngidolMaki_"><img src="bahan/bxl-twitter.svg" alt="" /></a>
           </div>
           <div class="full-w flex jstfy-center">
             <div class="garis w70 border-solid border-2 border-white h-1 rounded"></div>
@@ -139,12 +139,12 @@
 
   let reverse = json.reverse();
 
-  $(".top-image").attr("src", dataLast.thumb);
+  $(".top-image").attr("src", "https://pbs.twimg.com/profile_images/1695790883390775296/ZPkDnnAy_400x400.jpg");
   $(".bg.image").css("background-image", `url('${dataLast.thumb}')`);
 
   $.each(reverse, function (i, v) {
     $(".parent-list").append(`
-      <img src="${v.thumb}" data-full="${v.full}" class="wh-16rem bgc-contrast-d rounded-2xl list-image" />
+      <img src="${v.thumb}" data-full="${v.full}" class="wh-16rem bgc-contrast-d rounded-2xl list-image" loading="lazy"/>
     `);
     $(".parent-list").removeClass("dnone-imortal");
   });
