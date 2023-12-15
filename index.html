@@ -21,7 +21,7 @@
       <img alt="" class="h100vh full-w" />
     </div>
     <div class="flex jstfy-center full-w main pos-abs">
-      <div class="se1 bgc-success-d full-w max-window t-center px-10 py-20">
+      <div class="se1 bgc-success-d full-w max-window t-center px-8 py-20">
         <div class="flex jstfy-center full-w mb-40">
           <img src="" class="w-96 h-96 bgc-contrast-d rounded-2xl top-image" loading="lazy" />
         </div>
@@ -35,7 +35,7 @@
           <div class="garis w70 border-solid border-2 border-white h-1 rounded"></div>
         </div>
         <div class="flex full-w jstfy-center mt-20">
-          <div class="p-2 mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw-340 parent-list dnone-imortal"></div>
+          <div class="mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw-340 parent-list dnone-imortal"></div>
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@
 
   $.each(reverse, function (i, v) {
     $(".parent-list").append(`
-      <img src="${v.thumb}" data-full="${v.full}" class="w-64 h-64 bgc-contrast-d rounded-2xl list-image" />
+      <img src="${v.thumb}" data-full="${v.full}" class="wh-16rem bgc-contrast-d rounded-2xl list-image" />
     `);
     $(".parent-list").removeClass("dnone-imortal");
   });

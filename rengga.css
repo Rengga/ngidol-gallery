@@ -34,6 +34,11 @@ html {
   width: 30%;
 }
 
+.wh-16rem {
+  width: 16rem;
+  height: 16rem;
+}
+
 .w25 {
   width: 25%;
 }
