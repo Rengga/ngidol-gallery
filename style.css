@@ -6,7 +6,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: white;
 }
 
 /* Handle */
@@ -27,8 +27,8 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-.mxw-340 {
-  max-width: 340px;
+.mxw {
+  max-width: 330px;
 }
 
 .ff-varela {

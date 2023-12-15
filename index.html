@@ -13,6 +13,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="pg.js"></script>
   </head>
   <body class="pos-rel">
     <div class="popup h100vh full-w pos-abs" style="display: none">
@@ -25,7 +26,7 @@
       <div class="flex jstfy-center full-w h100vh main pos-abs">
         <div class="se1 bgc-success-d full-w max-window t-center px-8 py-20 overflow-auto">
           <div class="flex jstfy-center full-w mb-40">
-            <img src="" class="w-96 h-96 bgc-contrast-d rounded-2xl top-image" loading="lazy" />
+            <img src="" class="w-5/6 bgc-contrast-d rounded-2xl top-image" loading="lazy" />
           </div>
           <span class="text-title text-7xl text-white ff-varela">ngidolMaki</span>
           <div class="sosmed mt-40 mb-20 flex jstfy-evenly">
@@ -37,7 +38,7 @@
             <div class="garis w70 border-solid border-2 border-white h-1 rounded"></div>
           </div>
           <div class="flex full-w h100vh jstfy-center mt-20">
-            <div class="mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw-340 parent-list dnone-imortal"></div>
+            <div class="mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw parent-list dnone-imortal"></div>
           </div>
         </div>
       </div>
@@ -137,7 +138,6 @@
   let dataLast = json[last];
 
   let reverse = json.reverse();
-  console.log(reverse);
 
   $(".top-image").attr("src", dataLast.thumb);
   $(".bg.image").css("background-image", `url('${dataLast.thumb}')`);
