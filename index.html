@@ -26,7 +26,7 @@
       <div class="flex jstfy-center full-w h100vh main pos-abs">
         <div class="se1 bgc-success-d full-w max-window t-center px-8 py-20 overflow-auto">
           <div class="flex jstfy-center full-w mb-40">
-            <img src="" class="w-5/6 bgc-contrast-d rounded-2xl top-image" loading="lazy" />
+            <img src="" class="w-96 h-96 bgc-contrast-d rounded-2xl top-image" loading="lazy" />
           </div>
           <span class="text-title text-7xl text-white ff-varela">ngidolMaki</span>
           <div class="sosmed mt-40 mb-20 flex jstfy-evenly">
@@ -37,8 +37,8 @@
           <div class="full-w flex jstfy-center">
             <div class="garis w70 border-solid border-2 border-white h-1 rounded"></div>
           </div>
-          <div class="flex full-w h100vh jstfy-center mt-20">
-            <div class="mt-6 rounded-lg flex flex-row flex-wrap g-1 w-fit mxw parent-list dnone-imortal"></div>
+          <div class="flex full-w jstfy-center mt-20">
+            <div class="mt-6 rounded-lg flex flex-wrap g-1 w-fit mxw parent-list dnone-imortal"></div>
           </div>
         </div>
       </div>
@@ -53,14 +53,16 @@
 
   let reverse = json.reverse();
 
-  $(".top-image").attr("src", "https://pbs.twimg.com/profile_images/1695790883390775296/ZPkDnnAy_400x400.jpg");
-  $(".bg.image").css("background-image", `url('${dataLast.thumb}')`);
+  $(".top-image").attr(
+    "src",
+    "https://images.unsplash.com/photo-1719918464532-18e76ccb7446?crop=entropy&cs=srgb&fm=jpg&ixid=M3w2Mjg3NTR8MHwxfGFsbHw3fHx8fHx8Mnx8MTcxOTkyMjcyMnw&ixlib=rb-4.0.3&q=85"
+  );
 
   $.each(reverse, function (i, v) {
-    $(".parent-list").append(`
-      <img src="${v.thumb}" data-full="${v.full}" class="wh-16rem bgc-contrast-d rounded-2xl list-image" loooooooading="lazy"/>
-    `);
-    $(".parent-list").removeClass("dnone-imortal");
+    // $(".parent-list").append(`
+    //   <img src="${v.thumb}" data-full="${v.full}" class="wh-16rem bgc-contrast-d rounded-2xl list-image" loooooooading="lazy"/>
+    // `);
+    // $(".parent-list").removeClass("dnone-imortal");
   });
 
   $(document).on("click", ".list-image", function () {
@@ -72,5 +74,34 @@
   $(document).on("click", ".popup", function () {
     $(".popup").hide();
     $(".popup img").attr("src", "");
+  });
+
+  var key = "0A3ZtfuxWH1M06EyajluMjdXh0SvXyRacre2JtmU-FM";
+  $(document).ready(function () {
+    $.ajax({
+      url: `https://api.unsplash.com/users/ngidolmaki12/photos?client_id=${key}`,
+      method: "GET",
+      success: function (data) {
+        $.each(data, function (i, v) {
+          let dd = v.urls.full;
+          let pp = v.user.profile_image.large;
+          // console.log(dd, "cek gambar upload");
+          $(
+            ".parent-list"
+          ).append(`<img src="${dd}" data-full="${dd}" class="wh-16rem bgc-contrast-d rounded-2xl list-image object-cover" loooooooading="lazy"/>
+     `);
+          $(".parent-list").removeClass("dnone-imortal");
+        });
+      },
+      error: function () {
+        alert("Error loading image.");
+      },
+    });
+  });
+
+  $(document).on("mouseenter", ".list-image", function () {
+    let thisImg = $(this).attr("src");
+    console.log(thisImg, "joijoijo");
+    $(".bg.image").css("background-image", `url('${thisImg}')`);
   });
 </script>
